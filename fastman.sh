@@ -9,6 +9,16 @@
 # Part of the Cleanus Pack.
 # ==============================================================================
 
+#!/bin/bash
+echo -e "\033]0;Fastman v1 - al1h3n\007"
+
+if [ $EUID -ne 0 ];then
+   echo -e "${YELLOW}Elevation needed. Restarting with sudo..${RESET}"
+   exec sudo /bin/bash "$0" "$@"
+fi
+
+echo -e "\033[38;5;213mFastman by\033[0m \033[38;5;171mal1h3n${RESET}"
+
 exists(){
 	command -v $1&>/dev/null
 }
