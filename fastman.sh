@@ -25,9 +25,9 @@ exists(){
 
 if exists pacman;then # Arch, Endeavour, Cachy, Manjaro etc.
 pacman -S reflector curl jq --needed --noconfirm
-path = /etc/pacman.d/mirrorlist
-reflector -c $(curl -s ipinfo.io/json | jq -r '.country') --save $path
-echo -e "\n\033[38;5;46mWe updated your pacman mirror file in $path.${RESET}"
+mirror = /etc/pacman.d/mirrorlist
+reflector -c $(curl -s ipinfo.io/json | jq -r '.country') --save $mirror
+echo -e "\n\033[38;5;46mWe updated your pacman mirror file in $mirror.${RESET}"
 
 else
 echo -e "${RED}You don't have pacman, it's obvious. Exiting.${RESET}"
