@@ -11,6 +11,11 @@
 
 #!/bin/bash
 echo -e "\033]0;Fastman v1 - al1h3n\007"
+GREEN="\e[32m"
+YELLOW="\e[33m"
+RED="\e[31m"
+BLUE="\e[34m"
+RESET="\e[0m"
 
 if [ $EUID -ne 0 ];then
    echo -e "${YELLOW}Elevation needed. Restarting with sudo..${RESET}"
