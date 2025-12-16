@@ -19,7 +19,7 @@ RESET="\e[0m"
 
 if [ $EUID -ne 0 ];then
    echo -e "${YELLOW}Elevation needed. Restarting with sudo..${RESET}"
-   exec sudo /bin/bash "$0" "$@"
+   exec sudo /bin/bash $0 $@
 fi
 
 echo -e "\033[38;5;213mFastman by\033[0m \033[38;5;171mal1h3n${RESET}"
